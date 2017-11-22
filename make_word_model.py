@@ -56,6 +56,7 @@ def vectorize(path):
     word_files = glob.glob(DATASET_PATH + '/*.txt')
     category = 'hoge'
     for word_file in word_files:
+        category, _ = os.path.splitext(os.path.basename(word_file))
         # 形態素解析したデータを読み込み
         sentences = word2vec.Text8Corpus(word_file)
         # ハイパーパラメータ
